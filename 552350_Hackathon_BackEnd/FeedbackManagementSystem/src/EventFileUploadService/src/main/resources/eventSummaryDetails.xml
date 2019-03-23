@@ -1,0 +1,33 @@
+<workbook>
+  <worksheet idx="0">
+    <section startRow="0" endRow="0" />
+    <loop startRow="1" endRow="1" items="result" var="event" varType="com.cts.fse.feedback.bean.EventSummaryDetails">
+      <section startRow="1" endRow="1">
+       	<mapping row="1" col="0">event.eventId</mapping>
+        <mapping row="1" col="1">event.month</mapping> 
+        <mapping row="1" col="2">event.baseLocation</mapping> 
+        <mapping row="1" col="3">event.beneficiaryName</mapping> 
+        <mapping row="1" col="4">event.venueAddress</mapping> 
+        <mapping row="1" col="5">event.councilName</mapping> 
+        <mapping row="1" col="6">event.project</mapping> 
+        <mapping row="1" col="8">event.eventName</mapping> 
+        <mapping row="1" col="9">event.eventDesc</mapping> 
+        <mapping row="1" col="10">event.eventDateString</mapping> 
+        <mapping row="1" col="11">event.noofVolunteer</mapping> 
+        <mapping row="1" col="12">event.volunteerhrs</mapping> 
+		<mapping row="1" col="13">event.overallVolRingHrs</mapping> 
+		<mapping row="1" col="14">event.livesImpacted</mapping> 
+		<mapping row="1" col="15">event.activityType</mapping> 
+		<mapping row="1" col="16">event.status</mapping> 
+		<mapping row="1" col="18">event.pocId</mapping> 
+		<mapping row="1" col="19">event.pocName</mapping> 
+		<mapping row="1" col="20">event.pocContactNoString</mapping> 
+      </section>
+      <loopbreakcondition>
+        <rowcheck offset="0">
+          <cellcheck offset="0" />
+        </rowcheck>
+      </loopbreakcondition>
+    </loop>
+  </worksheet>
+</workbook>

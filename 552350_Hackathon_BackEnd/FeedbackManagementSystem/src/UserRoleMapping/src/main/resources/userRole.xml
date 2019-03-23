@@ -1,0 +1,19 @@
+<workbook>
+  <worksheet idx="0">
+    <section startRow="0" endRow="0" />
+    <loop startRow="1" endRow="1" items="result" var="user" varType="com.cts.fse.feedback.bean.UserRoleDetails">
+      <section startRow="1" endRow="1">
+       	<mapping row="1" col="0">user.associateId</mapping>
+       	<mapping row="1" col="1">user.associateName</mapping>
+       	<mapping row="1" col="2">user.role</mapping>   
+      </section>
+      <loopbreakcondition>
+        <rowcheck offset="0">
+          <cellcheck offset="0" />
+        </rowcheck>
+      </loopbreakcondition>
+    </loop>
+  </worksheet>
+</workbook>
+
+
