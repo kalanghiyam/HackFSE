@@ -1,0 +1,36 @@
+<div class="jumbotron">
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Login</h5>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-signin">
+<div class="form-group">
+    <label for="userName">UserName:</label>
+    <input type="number" class="form-control" formControlName="userName" id="userName">
+    <div *ngIf="submitted && loginForm.controls.userName.errors" class="errors">
+        <div *ngIf="loginForm.controls.userName.errors.required">UserName is required</div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" formControlName="password" id="password">
+    <div *ngIf="submitted && loginForm.controls.password.errors" class="errors">
+        <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
+    </div>
+</div>
+<div class="form-group">
+    <button type="submit" class="btn btn-primary">Login</button>
+    <div *ngIf="invalidLogin" class="errors">
+        <div>Invalid credentials.</div>
+    </div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

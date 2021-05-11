@@ -1,0 +1,32 @@
+<div class="example-container mat-elevation-z8 " #TABLE>
+  
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+  </mat-form-field>
+
+  <table mat-table #table [dataSource]="dataSource" class="mat-elevation-z8"  matSort>
+        
+  <ng-container matColumnDef="event">
+    <th align="center" mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>      
+    <td align="left" mat-cell *matCellDef="let entry"> {{entry.event}} </td>    
+  </ng-container>   
+  <ng-container matColumnDef="feedbackResponse">
+    <th align="center" mat-header-cell *matHeaderCellDef mat-sort-header> Feedback description </th>      
+    <td align="left" mat-cell *matCellDef="let entry"> {{entry.feedbackResponse}} </td>    
+  </ng-container>  
+  <ng-container matColumnDef="status"> 
+    <th align="center" mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>      
+    <td align="left" mat-cell *matCellDef="let entry"> {{entry.status}} </td>    
+  </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> 
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+  </table>
+  
+  <div align="left">
+  <mat-paginator  [pageSizeOptions]="[5,10,15]" showFirstLastButtons></mat-paginator>
+</div>
+</div>  
+<td width="70%" ></td>  
+<div><button class="btn btn-outline-primary mr-2" (click)="ExportTOExcel()">Export as Excel</button></div>

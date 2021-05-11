@@ -1,0 +1,15 @@
+mat-form-field {
+  width: 100%;
+}
+.errors{
+    color: blue;
+}
+/* .mat-dialog-content {
+  overflow-y: hidden !important;
+} */
+.mat-dialog-actions{
+  width: 100%;
+}
+
+
+  

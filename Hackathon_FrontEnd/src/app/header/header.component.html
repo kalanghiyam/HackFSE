@@ -1,0 +1,40 @@
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+ <div class="collapse navbar-collapse" id="navbarText"> 
+  <div id=navi>
+  <ul id=unorder class="nav nav-pills">
+     <li *ngIf="token.getRole()== 'ADMIN' || token.getRole() == 'POC' || token.getRole() == 'PMO' "> 
+            <a class="nav-link register-custom" routerLink="report">Home</a>
+     </li>
+     <li *ngIf="token.getRole()== 'ADMIN' || token.getRole() == 'PMO' ">
+            <a class="nav-link register-custom" routerLink="sendEmail">SendEmail</a>
+     </li>
+     <li *ngIf="token.getRole()== 'ADMIN' || token.getRole() == 'PMO' ">
+            <a class="nav-link register-custom" routerLink="feedBackDetails">Feedback Details</a>
+     </li>
+     <li *ngIf="token.getRole()== 'ADMIN' || token.getRole() == 'PMO' ">
+            <a class="nav-link register-custom" routerLink="userRole">UserRole Mapping</a> 
+     </li>
+     <li *ngIf="token.getRole()== 'ADMIN' || token.getRole() == 'PMO'">
+            <a class="nav-link register-custom" routerLink="emailTemplate">Email Template</a>
+     </li>
+     <li *ngIf="token.getRole()== 'ADMIN' || token.getRole() == 'PMO'">
+            <a class="nav-link register-custom" routerLink="fileUpload">File upload</a>
+     </li>
+     <li *ngIf="token.getRole()== 'USER'">
+       <a class="nav-link register-custom" routerLink="eventResponse">Event Feedback Response</a>
+    </li>
+    </ul>
+    </div>
+    
+</div>
+<td><img src="assets/userLogo.png"> </td>
+<td><tr>{{token.getUsername()}} </tr>
+    <tr><a class="logout"   
+        routerLinkActive="active-link"  
+         routerLink="/login">Logout</a></tr></td>
+
+
+</nav>
+
+<router-outlet></router-outlet>

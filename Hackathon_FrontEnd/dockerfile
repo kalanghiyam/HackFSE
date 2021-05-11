@@ -1,0 +1,9 @@
+FROM httpd:2.4
+COPY ./index.html /usr/local/apache2/htdocs/index.html
+COPY ./main.js /usr/local/apache2/htdocs/main.js
+COPY ./polyfills.js /usr/local/apache2/htdocs/polyfills.js
+COPY ./runtime.js /usr/local/apache2/htdocs/runtime.js
+COPY ./styles.js /usr/local/apache2/htdocs/styles.js
+COPY ./vendor.js /usr/local/apache2/htdocs/vendor.js
+COPY ./.htaccess /usr/local/apache2/htdocs/
+COPY ./httpd.config /usr/local/apache2/conf/httpd.conf

@@ -1,0 +1,51 @@
+<div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Id. </th>
+          <td mat-cell *matCellDef="let feedback"> {{feedback.id}} </td> 
+          
+        </ng-container>
+      
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+          <td mat-cell *matCellDef="let feedback"> {{feedback.status}} </td>
+        </ng-container>
+      
+    
+        <ng-container matColumnDef="feedBackDesc">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> FeedBack Description </th>
+          <td mat-cell *matCellDef="let feedback"> {{feedback.feedBackDesc}} </td>
+        </ng-container>
+        <ng-container matColumnDef="inputType">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Input Type</th>
+                <td mat-cell *matCellDef="let feedback"> {{feedback.inputType}} </td>
+                
+        </ng-container>
+          <ng-container matColumnDef="Edit">
+              <th mat-header-cell *matHeaderCellDef> Edit </th>
+              <td mat-cell *matCellDef="let feedback let i=index;" >
+                <button mat-icon-button color="accent" (click)="startEdit(i, feedback.id, feedback.status,
+                        feedback.feedBackDesc,feedback.inputType)">
+                  <mat-icon aria-label="Edit">edit</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> Delete </th>
+            <td mat-cell *matCellDef="let feedback">
+              <button mat-icon-button color="warn" (click)="redirectToDelete(feedback.id)">
+                  <mat-icon class="mat-18">Delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+      </div>
+    
+    

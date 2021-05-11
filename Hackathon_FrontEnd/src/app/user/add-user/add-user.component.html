@@ -1,0 +1,71 @@
+<div class="errors">{{errorMessage}}</div>
+<div class="container">
+  <div class="row">
+   <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+    
+      <h5 class="card-title text-center">Add User Role</h5>
+  <form [formGroup]="userRoleForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+      <label for="associateId">Associate Id:</label>
+      <input type="text" class="form-control" formControlName="associateId" id="associateId"
+      [(ngModel)]="user.associateId" name="associateId"  placeholder="Associate Id" ng-maxlength="11">
+      <div *ngIf="submitted && userRoleForm.controls.associateId.errors" class="errors">
+          <div *ngIf="userRoleForm.controls.associateId.errors.required">AssociateId is required</div>
+      </div>
+  </div>
+  
+  <div class="form-group">
+      <label for="associateName">AssociateName:</label>
+      <input type="text" class="form-control" formControlName="associateName" id="associateName"
+      [(ngModel)]="user.associateName" name="associateName"  placeholder="Associate Name" >
+      <div *ngIf="submitted && userRoleForm.controls.associateName.errors" class="errors">
+          <div *ngIf="userRoleForm.controls.associateName.errors.required">AssociateName is required</div>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="role">Role:</label>
+    <select name="users" ng-model="userSelect" class="form-control" formControlName="role" id="role"
+     [(ngModel)]="user.role" name="role"  placeholder="role" >
+        <option value="">--Select--</option>
+        <option value="ADMIN">Admin</option>
+        <option value="PMO">PMO</option>
+        <option value="POC">Event POC</option>
+        </select>
+    <div *ngIf="submitted && userRoleForm.controls.role.errors" class="errors">
+        <div *ngIf="userRoleForm.controls.role.errors.required">Role is required</div>
+    </div>
+</div>
+  <div class="form-group">
+      <button type="submit"  class="btn btn-primary" (click)="onSubmit(user);">Save</button>
+  </div>
+  </form>
+  </div>
+  </div>
+  </div>
+
+  <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+    <div class="container-fluid">
+<tr>
+    <input id="eventFile" name="eventFile" type="file" (change)="fileChangeEvent($event)"
+         placeholder="Upload a file..."     single/>
+        
+            <button type="button" class="btn btn-success btn-s" (click)="upload()">
+                    <i class="glyphicon glyphicon-open-file"></i>&nbsp;Upload
+            </button>
+            <td width="10%"></td>
+            <button class="btn btn-outline-primary mr-2" (click)="ExportTOExcel()">Download UserTemplate</button>
+    <div class="example-container mat-elevation-z8 " #TABLE>
+        <table #table style="display:none">
+            <tr>
+              <td>AssociateId</td>
+              <td>AssociateName</td>
+              <td>Role</td>
+            </tr>
+        </table>
+        </div>
+       
+    </tr>  
+    </div>  
+ 
+</form>
+

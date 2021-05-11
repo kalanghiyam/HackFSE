@@ -1,0 +1,21 @@
+<div  class="container-fluid">
+    <h3> Mutiple Event  File Upload</h3> 
+    <br>
+    <div class="errors">{{errorMessage}}</div>
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+    <div class="container-fluid">
+
+    <input id="eventFile" name="eventFile" type="file" (change)="fileChangeEvent($event)"
+         placeholder="Upload a file..."     multiple/>
+        
+            <button type="button" class="btn btn-success btn-s" (click)="upload()">
+                    <i class="glyphicon glyphicon-open-file"></i>&nbsp;Upload
+            </button>
+    </div>
+
+
+</form>
+<tr>
+  
+</tr>
+

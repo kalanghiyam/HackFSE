@@ -1,0 +1,57 @@
+<div  class="container-fluid">
+        <h3>Email Template</h3> 
+        <br>
+        <div class="errors">{{errorMessage}}</div>
+  
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status. </th>
+      <td mat-cell *matCellDef="let emailTemplate"> {{emailTemplate.status}} </td> 
+      
+    </ng-container>
+  
+    <ng-container matColumnDef="emailTemplate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email Template </th>
+      <td mat-cell *matCellDef="let emailTemplate">
+          <textarea rows="5" cols="50" type="text" [(ngModel)]="emailTemplate.emailTemplate"
+                value={{emailTemplate.emailTemplate}}></textarea>
+           </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="emailNotification">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email Notification  </th>
+      <td mat-cell matInput *matCellDef="let emailTemplate">
+        <input type="text"  [(ngModel)]="emailTemplate.emailNotification" maxlength="2"
+         value={{emailTemplate.emailNotification}} >
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="notificationInterval">
+            <th class="inputbox" mat-header-cell *matHeaderCellDef mat-sort-header> Email Notification Interval in days</th>
+            <td mat-cell  matInput *matCellDef="let emailTemplate">
+                    <input type="text"  [(ngModel)]="emailTemplate.notificationInterval"  
+                    maxlength="2"
+                    value={{emailTemplate.notificationInterval}} >
+            </td>
+            
+    </ng-container>
+      <ng-container matColumnDef="Save">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let emailTemplate" >
+            <button class="btn btn-primary"  color="accent" (click)="save(emailTemplate)">
+              Save
+            </button>
+        </td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    </table>
+  </div>
+</div>

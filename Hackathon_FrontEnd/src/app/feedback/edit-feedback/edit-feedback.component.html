@@ -1,0 +1,38 @@
+
+    <h3 mat-dialog-title>Edit FeedBack  {{feedback.id}}</h3>
+     
+    <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+        <div class="form-group">Status*
+            <mat-radio-group class="form-control" color="blue"
+            [(ngModel)]="feedback.status" name="status"  placeholder="Status" required>
+            <mat-radio-button value="PARTICIPATED">Participated</mat-radio-button>
+            <mat-radio-button value="NOTATTENDED">NotAttended</mat-radio-button>
+            <mat-radio-button value="UNREGISTERED">UnRegistered</mat-radio-button>
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-radio-group> 
+        </div> 
+      <div class="form-group">
+        <mat-form-field>
+          <textarea matInput #input class="form-control" [(ngModel)]="feedback.feedBackDesc" 
+          rows="2" cols="100" placeholder="Description*"   name="feedBackDesc" required  maxlength="255">
+           </textarea>
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-group">InputType
+        <mat-radio-group class="form-control" 
+        [(ngModel)]="feedback.inputType" name="inputType"  placeholder="inputType" required>
+        <mat-radio-button value="Smiley">Smiley</mat-radio-button>
+        <mat-radio-button value="Radio">Radio</mat-radio-button>
+        <mat-radio-button value="TextArea">Text</mat-radio-button>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-radio-group> 
+    </div> 
+      <div class="form-group" mat-dialog-actions>
+        <button mat-button  [type]="submit" [disabled]="!formControl.valid" 
+          [mat-dialog-close]="1" (click)="save()">Save</button>
+        <button mat-button (click)="cancel()"  tabindex="-1">Cancel</button>
+      </div>
+    </form>
+ 
+  

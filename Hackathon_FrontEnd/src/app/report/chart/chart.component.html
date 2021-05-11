@@ -1,0 +1,30 @@
+<div class="container-fluid">
+<mat-grid-list cols="2">
+  <mat-grid-tile>
+    
+<div id="chartContainer"  
+style="width: 100%;border-style: outset; height: 300px;margin-top:0px;"></div>
+<div *ngIf="chartContainer">
+  <canvas id="canvas">{{ chart }}</canvas>
+</div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <div id="smileyContainer"  style="width: 100%;border-style: outset; height: 300px;"></div>    
+
+
+      <br>
+     <div *ngIf="smileyContainer">
+        <canvas >{{ chart }}</canvas>
+      </div> 
+  </mat-grid-tile>
+  <div *ngIf="token.getRole()== 'ADMIN' || token.getRole() == 'PMO' ">
+  <mat-grid-tile>
+      <div id="cityContainer"  style="margin-top:0px;width: 100%;border-style: outset; height: 300px;float:right;"></div>
+    <div *ngIf="cityContainer">
+      <canvas >{{ chart }}</canvas>
+    </div> 
+  </mat-grid-tile>
+</div>
+</mat-grid-list>
+
+</div>

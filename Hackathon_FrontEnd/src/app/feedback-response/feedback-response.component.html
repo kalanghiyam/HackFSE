@@ -1,0 +1,48 @@
+<div class="container-fluid">
+<h1> Event FeedBack Response</h1> 
+<div class="errors">{{errorMessage}}</div>
+<div *ngIf="token.getEventResponded()=='N'">
+  <tr *ngFor="let feedback of feedbackDetails;let i = index">
+    <ng-template [ngIf]="feedback.inputType == 'Smiley'">
+        <tr> {{i+1}} . {{feedback.feedBackDesc}}</tr> <br/>
+        <tr><fieldset>
+            <input type="radio" [(ngModel)]="feedback.smileyValue" 
+                  value="5" id="smileyValue" /><img for="smileyValue" src="/assets/5.png">
+            <input type="radio"  [(ngModel)]="feedback.smileyValue" 
+                value="4" id="smileyValue" /><img for="smileyValue" src="/assets/4.png">
+            <input type="radio"  [(ngModel)]="feedback.smileyValue"
+                 value="3" id="smileyValue" /><img for="smileyValue" src="/assets/3.png">
+            <input type="radio"  [(ngModel)]="feedback.smileyValue" 
+                value="2" id="smileyValue" /><img for="feedbackResponse" src="/assets/2.png">
+            <input type="radio"  [(ngModel)]="feedback.smileyValue" 
+                value="1" id="smileyValue" /><img for="smileyValue"  src="/assets/1.png">
+            </fieldset>
+        </tr>
+    </ng-template>
+    <br/>
+    <ng-template [ngIf]="feedback.inputType == 'TextArea'">
+        <tr><label>{{i+1}} . {{feedback.feedBackDesc}}</label></tr> <br/>
+        <tr> <textarea type="text"   rows="3" cols="100" required
+                      [(ngModel)]="feedback.feedbackResponse" id="feedbackResponse" 
+                      class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
+        </tr>
+ 
+    </ng-template>
+    <ng-template [ngIf]="feedback.inputType == 'Radio'">
+    <tr>
+        <input type="radio" id="selected" [checked]="feedback.selected" 
+            mdbInput (change)='radioChecked(feedback.id)'> {{feedback.feedBackDesc}}
+         
+        </tr>
+
+    </ng-template>
+    
+    </tr>
+    <br/>
+   <button type="submit" class="btn btn-primary" (click)="onSubmit(feedbackDetails);">Save</button>
+</div>
+<div *ngIf="token.getEventResponded()=='Y'">
+ <h3>Your feedback is submitted</h3>
+</div>
+
+</div>

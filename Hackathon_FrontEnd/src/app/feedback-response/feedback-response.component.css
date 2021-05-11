@@ -1,0 +1,21 @@
+  input[type=radio],
+  input.radio {
+    float: left;
+    clear: none;
+    margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 1px;
+  }
+img{
+    vertical-align:middle;
+    float:left;
+}
+
+.mat-form-field--no-underline .mat-input-underline {
+  background-color: transparent;
+}
+
+.errors{
+  color: red;
+}

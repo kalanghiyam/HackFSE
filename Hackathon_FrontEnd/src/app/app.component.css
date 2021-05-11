@@ -1,0 +1,33 @@
+.jumbotron {
+  background-image: url("/assets/cts1.png"); /* The image used */
+  background-color: #cccccc;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+img{
+  margin-left: 1.5px;
+  float:left;
+}
+
+
+#navi{
+    
+  padding-top:10px; 
+  padding-left:10px;
+  padding-bottom:10px; 
+  background-color:#b4b0b0dc ;
+  
+} 
+
+#unorder{
+  display:flex;
+  justify-content:space-between;
+  padding : 1px;
+}
+.errors{
+  color: blue;
+}
