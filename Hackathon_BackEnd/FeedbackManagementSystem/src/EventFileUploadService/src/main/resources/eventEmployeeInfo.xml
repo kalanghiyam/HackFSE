@@ -1,0 +1,26 @@
+<workbook>
+  <worksheet idx="0">
+    <section startRow="0" endRow="0" />
+    <loop startRow="1" endRow="1" items="result" var="empInfo" varType="com.cts.fse.feedback.bean.EventEmployeeInfo">
+      <section startRow="1" endRow="1">
+       	<mapping row="1" col="0">empInfo.eventEmployeeIdentity.eventId</mapping>
+       	<mapping row="1" col="1">empInfo.baseLocation</mapping>
+       	<mapping row="1" col="2">empInfo.beneficiaryName</mapping>
+       	<mapping row="1" col="6">empInfo.eventDateString</mapping>
+        <mapping row="1" col="7">empInfo.eventEmployeeIdentity.associateId</mapping> 
+        <mapping row="1" col="8">empInfo.associateName</mapping>
+        <mapping row="1" col="9">empInfo.volunteerhrs</mapping>
+        <mapping row="1" col="10">empInfo.travelhrs</mapping>
+        <mapping row="1" col="11">empInfo.livesImpacted</mapping>
+        <mapping row="1" col="12">empInfo.bu</mapping>     
+      </section>
+      <loopbreakcondition>
+        <rowcheck offset="0">
+          <cellcheck offset="0" />
+        </rowcheck>
+      </loopbreakcondition>
+    </loop>
+  </worksheet>
+</workbook>
+
+
